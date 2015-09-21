@@ -1,0 +1,40 @@
+{
+    "manifest_version": 2,
+    "name": "Auto Clicker",
+    "version": "0.0.1",
+
+    "description": "A Chrome auto clicker.",
+
+    "author": "Russell Hueske <hueske.russ690@gmail.com>",
+
+    "commands": {
+        "toggle_auto_click": {
+            "description": "Toggle all Auto Clickers.",
+            "suggested_key": {
+                "default": "Alt+Shift+P"
+            }
+        }
+    },
+    "browser_action": {
+        "default_icon": "img/icon.png",
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "http://*/*",
+                "https://*/*"
+            ],
+            "js": [
+                "js/initializer.js"
+            ]
+        }
+    ],
+    "permissions": [
+        "tabs",
+        "contextMenus",
+        "https://*/*",
+        "http://*/*",
+        "http://deluge.ninja4826.me/*"
+    ]
+}
